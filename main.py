@@ -1,0 +1,6 @@
+import os
+os.envision['DJANGO_SETTINGS_MODULE'] = 'Servicize2.settings'
+
+import django.core.handlers.wsgi
+
+application = django.core.handlers.wsgi.WSGIHandler()
