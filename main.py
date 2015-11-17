@@ -1,5 +1,5 @@
 import os
-os.envision['DJANGO_SETTINGS_MODULE'] = 'Servicize2.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'Servicize2.settings'
 
 import django.core.handlers.wsgi
 
