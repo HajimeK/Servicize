@@ -1,7 +1,7 @@
-from django.conf.urls import patthern, url
+from django.conf.urls import patterns, url
 
 from iot import views
 
-urlpattherns = patthens('',
+urlpattherns = patterns('',
   url(r'^$', views.home)
 )
