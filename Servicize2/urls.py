@@ -5,11 +5,11 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^chat/$', include('chat.urls')), 
-    url(r'^iot/$', include('iot.urls')),
-    url(r'^translate/$', include('translate.urls')),
-    url(r'^three/$', include('three.urls')),
-    url(r'^vr/$', include('vr.urls')),
+    url(r'^chat/', include('chat.urls')), 
+    url(r'^iot/', include('iot.urls')),
+    url(r'^translate/', include('translate.urls')),
+    url(r'^three/', include('three.urls')),
+    url(r'^vr/', include('vr.urls')),
     # Examples:
     # url(r'^$', 'Servicize2.views.home', name='home'),
     # url(r'^Servicize2/', include('Servicize2.foo.urls')),
