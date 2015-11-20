@@ -5,11 +5,11 @@ api_version: 1
 threadsafe: yes
 
 handlers:
-- url: /css
+- url: /lib/css
   static_dir: lib/css
-- url: /img
+- url: /lib/img
   static_dir: lib/img
-- url: /js
+- url: /lib/js
   static_dir: lib/js
 - url: .*
   script: main.application
