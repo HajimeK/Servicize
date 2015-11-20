@@ -5,14 +5,14 @@ api_version: 1
 threadsafe: yes
 
 handlers:
-- url: .*
-  script: main.application
 - url: /css
   static_dir: lib/css
 - url: /img
   static_dir: lib/img
 - url: /js
   static_dir: lib/js
+- url: .*
+  script: main.application
 
 libraries:
 - name: django
