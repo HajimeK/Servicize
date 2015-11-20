@@ -8,12 +8,12 @@ handlers:
 - url: .*
   script: main.application
 - url: /css
-  static_dir: static/css
+  static_dir: lib/css
 - url: /img
-  static_dir: static/img
+  static_dir: lib/img
 - url: /js
-  static_dir: static/js
-  
+  static_dir: lib/js
+
 libraries:
 - name: django
   version: "1.5"

@@ -67,7 +67,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = '/lib/'
 
 SITE_ROOT = abspath(os.path.join(dirname(__file__),".."))
 #STATIC_URL = abspath(os.path.join(SITE_ROOT,'static'))
@@ -77,7 +77,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(SITE_ROOT,'static'),
+    os.path.join(SITE_ROOT,'lib'),
 )
 
 # List of finder classes that know how to find static files in
