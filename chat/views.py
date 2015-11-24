@@ -18,13 +18,15 @@ from chat import models
 import datetime
 
 def home(request):
-  return render_to_response('chat/index.html', {'clock': datetime.datetime.now()},)
-  return render_to_response('chat/index.html', {'clock': q},)
+  q = models.Chat.query().order(models.Chat.subject)
+  return render_to_response('chat/index.html', {'chats':q})
+#  return render_to_response('chat/index.html', {'clock': datetime.datetime.now()},)
+#  return render_to_response('chat/index.html', {'clock': q},)
 
 ChatForm = model_form(models.Chat)
 
 def form(request, chat_id=None):
-  q = models.Chat.query().order('subject')
+  q = models.Chat.query()#.order('subject')
   if request.method =='POST':
       if chat_id:
          chat = models.Chat.get_by_id(int(chat_id))
