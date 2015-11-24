@@ -1,0 +1,43 @@
+<html>
+	<body>
+    {% if book_id %}
+	    <p>Edit book {{book_id}}:</p>
+		<form action="/chats/chat/>{{chat_id}}" method="POST">
+	{% else %}
+	    <p>Create book:</p>
+		<form action="/chats/chat" method="POST">
+	{% endif %}
+		{% csrf_taoken %}
+		<p>
+			{{form.subject.label|safe}}: {{form.subject|safe}}
+			{% if form.subject.errors %}
+			<ul>
+				{% for error in form.subject.errors %}
+				<li>{{error}}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		</p>
+		<p>
+			{{form.speaker.label|safe}}:{{form.speaker|safe}}
+			{% if form.speaker.errors %}
+			<ul>
+				{% for errors in form.speaker.errors %}
+				<li>{{errors}}</li>
+			</ul>
+			{% endif %}
+		</p>
+		<p>
+			{{form.date.label|safe}}: {{form.date|safe}}
+			{% if form.date.errors %}
+			<ul>
+				{% for error in form.date.errors %}
+				<li>{{errors}}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		</p>
+		<input type="submit" />
+		</form>
+	</body>
+</html>

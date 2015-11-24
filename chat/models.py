@@ -1,17 +1,14 @@
 from django.db import models
-
-# Create your models here.
-from google.appengine.ext
-import ndb
+from google.appengine.ext import ndb
 
 class Chat(ndb.Model):
-	Subject = ndb.StringProperty()
-	Speaker = ndb.StringProperty()
+	subject = ndb.StringProperty()
+	speaker = ndb.StringProperty()
 	date = ndb.DateProperty()
 
 class ChatReview(ndb.Model):
-	chat = ndb.KeyPropery(kind='Chat')
-    reviewer = ndb.UserProperty()
+	chat = ndb.KeyProperty(kind='Chat')
+	reviewer = ndb.UserProperty()
 	review_text = ndb.TextProperty()
-	rating = ndb.StringProperty(Choices=['Poor', 'OK', 'Good', 'Very Good', 'Great'], default = 'Great')
-	create_data = ndb.DateTimePropery(auto_now_add=True)
+	rating = ndb.StringProperty(choices=['Poor', 'OK', 'Good', 'Very Good', 'Great'], default = 'Great')
+	create_data = ndb.DateTimeProperty(auto_now_add=True)

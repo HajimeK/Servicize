@@ -103,6 +103,14 @@
               <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
             </div>
           </div>
+          
+          <p>Chat in my list:</p>
+          <ul>
+            {% for chat in chats %}
+            <li>{{chat.subject}}, by {{chat.speaker}}({{chat.date}})[<a href="chat/chat/"{{chat.key.id}}>edit</a>]</li>
+            {% endfor %}
+          </ul>
+          <p>[<a href="/chat/chat/">add a chat</a>]</p>
 
         </div>
 
