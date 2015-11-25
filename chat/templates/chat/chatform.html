@@ -1,13 +1,13 @@
 <html>
 	<body>
-    {% if book_id %}
-	    <p>Edit book {{book_id}}:</p>
-		<form action="/chats/chat/>{{chat_id}}" method="POST">
+	{% if chat_id %}
+	    <p>Edit chat {{chat_id}}:</p>
+		<form action="/chat/>{{chat_id}}" method="POST">
 	{% else %}
 	    <p>Create book:</p>
-		<form action="/chats/chat" method="POST">
+		<form action="/chat/" method="POST">
 	{% endif %}
-		{% csrf_taoken %}
+		{% csrf_token %}
 		<p>
 			{{form.subject.label|safe}}: {{form.subject|safe}}
 			{% if form.subject.errors %}
@@ -24,6 +24,7 @@
 			<ul>
 				{% for errors in form.speaker.errors %}
 				<li>{{errors}}</li>
+				{% endfor %}
 			</ul>
 			{% endif %}
 		</p>
